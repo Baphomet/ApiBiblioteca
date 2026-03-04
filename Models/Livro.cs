@@ -1,4 +1,6 @@
-﻿namespace ApiBiblioteca.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ApiBiblioteca.Models
 {
     public class Livro
     {
@@ -7,6 +9,8 @@
         public string Autor { get; set; }
         public int AnoPublicacao { get; set; }
         public bool IsDisponivel { get; set; }
+
+        [JsonIgnore]
         public ICollection<Emprestimo> Emprestimos { get; set; }
 
     }
